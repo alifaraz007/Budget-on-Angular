@@ -1,0 +1,165 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #fff;
+}
+.wrapper{
+    flex-direction: column;
+    height: 100vh;
+}
+.bud_text{
+    margin-top: 50px;
+}
+.box1{
+    text-align: center;
+    padding: 10px;
+    background-image: url(../img/back.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh
+}
+.bud_text{
+    flex: 2;
+}
+.bud_inc{
+    flex: 0.80;
+    background-color: #28B9B5;
+    width: 350px;
+    margin-bottom: 10px;
+}
+.inc_text{
+    padding: 17px 0px 0px 10px;
+    float: left;
+    color: #444;
+    font-size: 13px;
+}
+.inc_right{
+    float: right;
+    padding: 17px 50px 0px 0px;
+}
+.bud_exp{
+    flex: 0.80;
+    background-color: #FF5049;
+    width: 350px;
+}
+.exp_text{
+    padding: 17px 0px 0px 10px;
+    float: left;
+    color: #444;
+    font-size: 13px;
+}
+.exp_right{
+    float: right;
+    padding: 17px 10px 15px 0px;
+}
+.exp_value_per{
+    font-size: 12px;
+    padding: 0px 5px 0px 5px;
+    background-color: darksalmon;
+    border-radius: 2px;
+    margin-left: 5px;
+}
+.box2{
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: #f1f1f1;
+    text-align: center;
+}
+select{
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+.box2 input:nth-of-type(1){
+    padding: 10px;
+    width: 400px;
+    border-radius: 5px;
+}
+.box2 input:nth-of-type(2){
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+}
+.box2 input:nth-of-type(3){
+    padding: 10px;
+    width: 50px;
+    border-radius: 5px;
+}
+.box3{
+    padding: 10px;
+}
+ul{
+    padding: 5px;
+}
+li{
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+}
+.enEntry{
+    display: inline;
+    padding-right: 200px;
+}
+.enRight{
+    float: right; 
+}
+.amtPer{
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    border-radius: 5px;
+    background: darksalmon;
+    color: #fff;
+}
+.rmv{
+    margin-left: 10px;
+    padding: 0px 5px 0px 5px;
+    background: #ddd;
+    border-radius: 50px;
+}
+.inc{
+    float: left;
+    color: #28B9B5;
+    margin-left: 200px;
+    width: 500px;
+}
+h2{
+    font-size: 18px;
+    font-weight: 400px;
+}
+.exp{
+    float: left;
+    color: #FF5049;
+    margin-left: 150px;
+}
+
+
+/*Animation*/
+
+/* The starting CSS styles for the enter animation */
+.list li.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+.list li.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+/* now the element will fade out before it is removed from the DOM */
+.list li.ng-leave {
+  transition:0.5s linear all;
+    transform: translateX(0);
+  opacity:1;
+}
+.list li.ng-leave.ng-leave-active {
+  opacity:0;
+    transform: translateX(-100%);
+}

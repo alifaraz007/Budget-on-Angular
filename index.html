@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/png" href="fevicon.png" />
+        <title>Angular</title>
+        <script src="app/lib/angular.min.js"></script>
+        <script src="app/lib/angular-animate.min.js"></script>
+        <script src="app/app.js"></script>
+        <link rel="stylesheet" href="content/css/style.css" />
+    </head>
+    <body ng-controller='myCtrl'>
+        <div class="wrapper">
+            
+            <div class="box1">
+                <div class="bud_text">Budget- {{budget | number: 2}}</div>
+                <div class="bud_inc">
+                    <div class="inc_text">INCOME</div>
+                    <div class="inc_right">
+                        <div class="inc_value">+{{totalInc | number: 2}}</div>
+                        <div class="inc_value_per">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="bud_exp">
+                    <div class="exp_text">EXPENSES</div>
+                    <div class="exp_right">
+                        <span class="exp_value">-{{totalExp | number: 2}}</span>
+                        <span class="exp_value_per">{{expPerc}}%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box2">
+                <select ng-model='selectType'>
+                    <option ng-repeat='x in data'>{{x}}</option>
+                </select>
+                <input type='text' placeholder="Add Description" ng-model='entry' />
+                <input type="number" placeholder="Value" ng-model='amount' />
+                <input type="button" ng-click='update()' value="Add"/>
+            </div>
+            
+            <div class="box3">
+                <div class='inc'>
+                    <h2>Income</h2>
+                    <ul class="list">
+                        <li ng-repeat="a in income" ng-show="a.available">
+                            <div class="enEntry">{{a.newEntry}}</div>
+                            <div class="enRight">
+                                <span class="amtEntry">+{{a.resAmount | number: 2}}</span>
+                                <span class="rmv" ng-click='removeInc(a)'>x</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class='exp'>
+                    <h2>Expenses</h2>
+                    <ul class="list">
+                        <li ng-repeat="b in expense" ng-show="b.available">
+                            <div class="enEntry">{{b.newEntry}}</div>
+                            <div class="enRight">
+                                <span class="amtEntry">-{{b.resAmount | number: 2}}</span>
+                                <span class="amtPer">{{Math.round(b.resAmount*100/totalInc)}}%</span>
+                                <span class="rmv" ng-click='removeExp(b)'>x</span>
+                            </div> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>    
+    </body>
+</html>
